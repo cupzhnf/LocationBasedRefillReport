@@ -1,0 +1,27 @@
+#!/usr/bin/expect -f
+#
+
+set arg [lindex $argv 0]
+
+spawn telnet aa.bb.cc.dd
+expect "login name: "
+send "user\r"
+expect "password: "
+send "P@55w0rd\r"
+expect "Windows NT Domain: "
+send "\r"
+expect ">"
+send "mml\r"
+expect "<"
+send "TEST SYSTEM;\r"
+expect "<"
+send "PRINT VAR MTV $arg:189;\r"
+expect "<"
+send "PRINT VAR MTV $arg:191;\r"
+expect "<"
+send "END TEST;\r\h"
+expect "<"
+send "EXIT;\r"
+expect ">"
+send "exit\r"
+expect "VLRDIST> "
