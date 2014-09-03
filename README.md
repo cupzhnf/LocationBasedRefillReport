@@ -1,6 +1,3 @@
 LocationBasedRefillReport
-=========================
-
 init version
-
-#shell script #sqlplus #expect #awk
+shellscript, sqlplus, expect, awk
